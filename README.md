@@ -65,10 +65,10 @@ To run all tests (dev = the desired environment. It can be dev or qa):
 
 ### Writing Tests
 
-1. Create a Page Class
+1. Create a Page Class:
 Add a new class in the pageobjectsclasses package for the web page you want to automate. Define WebElements and methods to interact with these elements.
 
-2. Create a Test Class
+2. Create a Test Class:
 Add a new test class in the test_framework_theory package. Use TestNG annotations to define test methods.
 
 ### Test Results
