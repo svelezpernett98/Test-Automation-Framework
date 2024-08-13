@@ -26,40 +26,6 @@ The purpose of this framework is to provide a robust and scalable test automatio
 ## Project Structure
 ![image](https://github.com/user-attachments/assets/0ce7c918-30b7-4657-b279-be06cdd59147)
 
-project-root
-│
-├── screenshots
-├── src
-│ ├── main
-│ │ └── java
-│ │ ├── com.epam.training.student_santiago_velez.framework_theory
-│ │ ├── base
-│ │ │ ├── BaseClass.java
-│ │ │ └── Hooks.java
-│ │ ├── model
-│ │ │ └── ComputeEngine.java
-│ │ ├── pageobjectsclasses
-│ │ │ ├── ComputeEnginePage.java
-│ │ │ ├── CostEstimateSummaryPage.java
-│ │ │ └── GoogleCloudCalculatorPage.java
-│ │ ├── service
-│ │ │ ├── ComputeEngineCreator.java
-│ │ │ └── TestDataReader.java
-│ │ ├── util
-│ │ │ ├── StringUtils.java
-│ │ │ └── TestListener.java
-│ │ └── resources
-│ │ │ ├── dev.properties
-│ │ │ └── qa.properties
-│ └── test
-│ └── java
-│ ├── com.epam.training.student_santiago_velez.test_framework_theory
-│ │ └── AppTest.java
-│
-├── pom.xml
-├── testng-all.xml
-└── testng-smoke.xml
-
 - **base**: Contains base classes for common operations like WebDriver initialization, waits setup, and other common actions perfomred by the WebDriver. Additionally the Hooks class contains the @BeforeSuite, and @AfterSuite methods for calling the driver setup, and driver cleanup.
 - **model**: Contains model classes for the elements that the developer might want to interact with as a model for easier code readibility, and multi-environment support.
 - **pageobjectsclasses**: Contains page classes where each class represents a web page and its elements.
@@ -86,34 +52,25 @@ project-root
 2. Import the Project in Your IDE
   Open your preferred IDE and import the project as a Maven project.
 
-3. Configure WebDriver
-  Ensure that the appropriate WebDriver (e.g., ChromeDriver) is installed and its path is set in your system PATH variable, or specify the path in WebDriverManager class.
-
-4. Install Dependencies
+3. Install Dependencies
   Run the following Maven command to install project dependencies:
   mvn clean install
 
-###Running Tests
+### Running Tests
 
 Using Maven
-To run all tests:
+To run all tests (dev = the desired environment. It can be dev or qa):
   bash
   mvn test -Denvironment=dev
-
-Using TestNG XML
-You can run tests using a TestNG XML file for more control over which tests are executed:
-  bash
-  mvn clean test -DsuiteXmlFile=testng.xml
 
 ### Writing Tests
 
 1. Create a Page Class
-  Add a new class in the pages package for the web page you want to automate. Define WebElements and methods to interact with these elements.
+  Add a new class in the pageobjectsclasses package for the web page you want to automate. Define WebElements and methods to interact with these elements.
 
 2. Create a Test Class
-  Add a new test class in the tests package. Use TestNG annotations to define test methods.
+  Add a new test class in the test_framework_theory package. Use TestNG annotations to define test methods.
 
-### Test results
-
-Test execution results are generated using takeSnapShot method from TestListener class which takes a screenshot if the test fails.
+### Test Results
+Test execution results are generated using takeSnapShot method from TestListener class which takes a screenshot if the test fails by implementing the ITestListener interface, and then saves it into the screenshots folder.
    
