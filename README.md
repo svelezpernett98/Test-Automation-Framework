@@ -22,38 +22,51 @@ The purpose of this framework is to provide a robust and scalable test automatio
 - **Selenium WebDriver**: For interacting with web browsers.
 - **TestNG**: Testing framework to run and organize test cases.
 - **Maven**: Build automation tool for project management.
-- **Log4j**: Logging framework to capture logs.
-- **ExtentReports**: To generate test execution reports.
 
 ## Project Structure
+![image](https://github.com/user-attachments/assets/0ce7c918-30b7-4657-b279-be06cdd59147)
+
 project-root
 │
+├── screenshots
 ├── src
 │ ├── main
 │ │ └── java
-│ │ ├── com.yourcompany.yourproject
-│ │ ├── pages
-│ │ │ ├── HomePage.java
-│ │ │ ├── LoginPage.java
-│ │ │ └── ...
-│ │ ├── utils
-│ │ │ ├── WebDriverManager.java
-│ │ │ └── ...
-│ │ └── ...
+│ │ ├── com.epam.training.student_santiago_velez.framework_theory
+│ │ ├── base
+│ │ │ ├── BaseClass.java
+│ │ │ └── Hooks.java
+│ │ ├── model
+│ │ │ └── ComputeEngine.java
+│ │ ├── pageobjectsclasses
+│ │ │ ├── ComputeEnginePage.java
+│ │ │ ├── CostEstimateSummaryPage.java
+│ │ │ └── GoogleCloudCalculatorPage.java
+│ │ ├── service
+│ │ │ ├── ComputeEngineCreator.java
+│ │ │ └── TestDataReader.java
+│ │ ├── util
+│ │ │ ├── StringUtils.java
+│ │ │ └── TestListener.java
+│ │ └── resources
+│ │ │ ├── dev.properties
+│ │ │ └── qa.properties
 │ └── test
 │ └── java
-│ ├── com.yourcompany.yourproject
-│ ├── tests
-│ │ ├── LoginTest.java
-│ │ └── ...
-│ └── ...
+│ ├── com.epam.training.student_santiago_velez.test_framework_theory
+│ │ └── AppTest.java
 │
 ├── pom.xml
-└── README.md
+├── testng-all.xml
+└── testng-smoke.xml
 
-- **Pages**: Contains page classes where each class represents a web page and its elements.
-- **Tests**: Contains test classes where each class represents test cases.
-- **Utils**: Contains utility classes for common operations like WebDriver management.
+- **base**: Contains base classes for common operations like WebDriver initialization, waits setup, and other common actions perfomred by the WebDriver. Additionally the Hooks class contains the @BeforeSuite, and @AfterSuite methods for calling the driver setup, and driver cleanup.
+- **model**: Contains model classes for the elements that the developer might want to interact with as a model for easier code readibility, and multi-environment support.
+- **pageobjectsclasses**: Contains page classes where each class represents a web page and its elements.
+- **service**: Contains service classes for creation of instances of the model classes, and reading environment data from the .properties files.
+- **util**: Contains utility classes for common operations like Strings manipulation, or ItestListener implementation.
+- **resources**: Contains .properties files which contain environment related data for model classes instances initialization.
+- **test_framework_theory**: Contains test classes where each class represents test cases.
 
 ## Setup and Installation
 
