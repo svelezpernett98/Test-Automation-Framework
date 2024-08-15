@@ -46,8 +46,8 @@ The purpose of this framework is to provide a robust and scalable test automatio
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/yourproject.git
-   cd yourproject
+   git clone https://github.com/svelezpernett98/Test-Automation-Framework.git
+   cd Test-Automation-Framework
 
 2. Import the Project in Your IDE
   Open your preferred IDE and import the project as a Maven project.
