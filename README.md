@@ -49,10 +49,10 @@ The purpose of this framework is to provide a robust and scalable test automatio
    git clone https://github.com/svelezpernett98/Test-Automation-Framework.git
    cd Test-Automation-Framework
 
-2. Import the Project in Your IDE
+2. **Import the Project in Your IDE**
   Open your preferred IDE and import the project as a Maven project.
 
-3. Install Dependencies
+4. **Install Dependencies**
   Run the following Maven command to install project dependencies:
   mvn clean install
 
